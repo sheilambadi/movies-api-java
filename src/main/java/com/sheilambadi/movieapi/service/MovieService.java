@@ -45,6 +45,12 @@ public class MovieService {
         return  movieModel;
     }
     
+    public MovieModel updateMovieModel(MovieModel movieModel){
+        int id = movieModel.getMovieId();
+        movies.put(id, movieModel);
+        return movieModel;
+    }
+    
 
     
     public static HashMap<Integer, MovieModel> getMovieHashMap(){
