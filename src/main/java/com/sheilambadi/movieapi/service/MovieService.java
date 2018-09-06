@@ -34,6 +34,13 @@ public class MovieService {
         return  movieList;
     }
     
+    public MovieModel getSpecificMovie(int id){
+        MovieModel specificMovie = movies.get(id);
+        return specificMovie;
+    }
+    
+
+    
     public static HashMap<Integer, MovieModel> getMovieHashMap(){
         return movies;
     }

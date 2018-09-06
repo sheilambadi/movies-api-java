@@ -1,9 +1,11 @@
 package com.sheilambadi.movieapi.rest;
 
+import com.sheilambadi.movieapi.model.MovieModel;
 import com.sheilambadi.movieapi.service.MovieService;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -20,6 +22,14 @@ public class MovieRest {
     public List getMovies(){
         List listOfMovies = movieService.getMovies();
         return  listOfMovies;
+    }
+    
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public MovieModel getMovieById(@PathParam("id") int id){
+        MovieModel movie = movieService.getSpecificMovie(id);
+        return movie;
     }
     
 }
