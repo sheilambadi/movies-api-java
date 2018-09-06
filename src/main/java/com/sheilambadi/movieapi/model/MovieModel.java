@@ -9,6 +9,9 @@ public class MovieModel {
     private String movieName;
     private String movieSynopsis;
 
+    public MovieModel() {
+    }
+
     public MovieModel(int movieId, String movieName, String movieSynopsis) {
         this.movieId = movieId;
         this.movieName = movieName;
