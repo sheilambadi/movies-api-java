@@ -51,7 +51,9 @@ public class MovieService {
         return movieModel;
     }
     
-
+    public void deleteMovie(int id){
+        movies.remove(id);
+    }
     
     public static HashMap<Integer, MovieModel> getMovieHashMap(){
         return movies;

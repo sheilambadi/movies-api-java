@@ -4,6 +4,7 @@ import com.sheilambadi.movieapi.model.MovieModel;
 import com.sheilambadi.movieapi.service.MovieService;
 import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -51,6 +52,13 @@ public class MovieRest {
     public MovieModel updateMovie(MovieModel movieModel){
         MovieModel movie = movieService.updateMovieModel(movieModel);
         return movie;
+    }
+    
+    @DELETE
+    @Path("deletemovie/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void deleteMovie(@PathParam("id") int id){
+        movieService.deleteMovie(id);
     }
     
 }
